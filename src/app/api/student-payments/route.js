@@ -1,5 +1,5 @@
-import sql from "@/app/api/utils/sql";
-import { sendPaymentReceiptEmail } from "@/app/api/utils/email";
+import sql from "../utils/sql.js";
+import { sendPaymentReceiptEmail } from "../utils/email.js";
 
 // GET /api/student-payments?student_id=123 or ?school=Lawson%20University
 export async function GET(request) {

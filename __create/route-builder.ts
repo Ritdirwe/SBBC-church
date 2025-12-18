@@ -1,5 +1,5 @@
 import { readdir, stat } from 'node:fs/promises';
-import { join } from 'node:path';
+import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Hono } from 'hono';
 import type { Handler } from 'hono/types';
@@ -8,8 +8,19 @@ import updatedFetch from '../src/__create/fetch';
 const API_BASENAME = '/api';
 const api = new Hono();
 
-// Get current directory
-const __dirname = join(fileURLToPath(new URL('.', import.meta.url)), '../src/app/api');
+// Get project root directory - works in both dev and production builds
+const getProjectRoot = () => {
+  // Use process.cwd() which always points to the project root
+  // This works in both dev and production
+  const cwd = process.cwd();
+  
+  // Verify we're in the right place by checking if src/app/api exists
+  const apiPath = join(cwd, 'src/app/api');
+  return cwd;
+};
+
+const projectRoot = getProjectRoot();
+const __dirname = join(projectRoot, 'src/app/api');
 if (globalThis.fetch) {
   globalThis.fetch = updatedFetch;
 }

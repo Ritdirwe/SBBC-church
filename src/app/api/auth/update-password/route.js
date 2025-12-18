@@ -1,6 +1,6 @@
 import { hash } from "argon2";
-import sql from "@/app/api/utils/sql";
-import { auth } from "@/auth";
+import sql from "../../utils/sql.js";
+import { auth } from "../../../../auth.js";
 
 export async function POST(req) {
   try {

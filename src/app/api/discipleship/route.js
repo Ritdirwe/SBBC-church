@@ -1,10 +1,10 @@
-import sql from "@/app/api/utils/sql";
-import { sendWelcomeEmail } from "@/app/api/utils/email";
+import sql from "../utils/sql.js";
+import { sendWelcomeEmail } from "../utils/email.js";
 import {
   isValidEmail,
   safeName,
   normalizePhone,
-} from "@/app/api/utils/validators";
+} from "../utils/validators.js";
 
 export async function POST(request) {
   try {

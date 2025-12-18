@@ -1,5 +1,5 @@
-import sql from "@/app/api/utils/sql";
-import { sendWelcomeEmail } from "@/app/api/utils/email";
+import sql from "../utils/sql.js";
+import { sendWelcomeEmail } from "../utils/email.js";
 // ADD: basic input validators/sanitizers
 import {
   isValidEmail,
@@ -7,7 +7,7 @@ import {
   normalizePhone,
   safeDepartment,
   trimToNull,
-} from "@/app/api/utils/validators";
+} from "../utils/validators.js";
 
 export async function POST(request) {
   try {

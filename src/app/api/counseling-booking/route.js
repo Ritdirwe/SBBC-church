@@ -1,12 +1,12 @@
-import sql from "@/app/api/utils/sql";
-import { sendWelcomeEmail } from "@/app/api/utils/email";
+import sql from "../utils/sql.js";
+import { sendWelcomeEmail } from "../utils/email.js";
 import {
   isValidEmail,
   safeName,
   normalizePhone,
   safeLongText,
   trimToNull,
-} from "@/app/api/utils/validators";
+} from "../utils/validators.js";
 
 // NEW: List counseling bookings for the dashboard analytics/submissions
 export async function GET(request) {

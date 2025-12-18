@@ -1,5 +1,5 @@
 import { hash } from "argon2";
-import sql from "@/app/api/utils/sql";
+import sql from "../../utils/sql.js";
 
 export async function GET() {
   try {

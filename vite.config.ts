@@ -30,6 +30,12 @@ export default defineConfig({
       'fsevents',
       'lightningcss',
     ],
+    esbuildOptions: {
+      target: 'esnext',
+      supported: {
+        'top-level-await': true,
+      },
+    },
   },
   logLevel: 'info',
   plugins: [
@@ -78,6 +84,30 @@ export default defineConfig({
     dedupe: ['react', 'react-dom'],
   },
   clearScreen: false,
+  build: {
+    target: 'esnext',
+    ssr: true,
+    rollupOptions: {
+      output: {
+        format: 'es',
+      },
+    },
+  },
+  ssr: {
+    target: 'node',
+    noExternal: [],
+    resolve: {
+      conditions: ['node', 'import'],
+    },
+  },
+  esbuild: {
+    target: 'esnext',
+    format: 'esm',
+    platform: 'node',
+    supported: {
+      'top-level-await': true,
+    },
+  },
   server: {
     allowedHosts: true,
     host: '0.0.0.0',

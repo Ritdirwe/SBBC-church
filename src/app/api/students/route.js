@@ -1,4 +1,4 @@
-import sql from "@/app/api/utils/sql";
+import sql from "../utils/sql.js";
 
 // GET /api/students?school=Lawson%20University
 // Returns list of students, optionally filtered by school_name
