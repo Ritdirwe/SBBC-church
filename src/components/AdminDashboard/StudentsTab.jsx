@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { Users, Plus, CheckCircle, Upload, DollarSign } from "lucide-react";
+import { Users, Plus, CheckCircle, DollarSign } from "lucide-react";
 
 const INSTITUTIONS = [
   "Lawson University",
