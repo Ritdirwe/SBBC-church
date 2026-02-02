@@ -1,1 +1,0 @@
-import{c as i}from"./layout-BpWMjkMg.js";if(typeof window<"u"){const s={};globalThis.process??={};const n=globalThis.process.env??{};globalThis.process.env=new Proxy(Object.assign({},s,n),{get(e,o){return o in e?e[o]:void 0},has(){return!0}})}const a=i("Play",[["polygon",{points:"6 3 20 12 6 21 6 3",key:"1oa8hb"}]]);export{a as P};
